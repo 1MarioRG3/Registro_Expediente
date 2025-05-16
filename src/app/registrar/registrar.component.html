@@ -1,0 +1,143 @@
+<div class="container mt-5">
+  <div class="d-flex justify-content-center align-items-center mb-3">
+    <h2 class="fw-bold">REGISTRAR</h2>
+  </div>
+  <form #expedienteForm="ngForm" (ngSubmit)="onSubmit()" class="bg-light p-5 rounded-3">
+    <!-- Unidad -->
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <label for="unidad" class="form-label required-field">Unidad</label>
+        <select class="form-select" id="unidad" [(ngModel)]="expediente.unidad" name="unidad" required
+          [class.is-invalid]="expedienteForm.submitted && !expediente.unidad">
+          <option value="" disabled selected>Seleccione</option>
+          <option *ngFor="let unidad of unidades" [value]="unidad">{{unidad}}</option>
+        </select>
+        <div class="invalid-feedback" *ngIf="expedienteForm.submitted && !expediente.unidad">
+          Por favor seleccione una unidad
+        </div>
+      </div>
+
+      <!-- Fecha Inicio -->
+      <div class="col-md-4">
+        <label for="fechaInicio" class="form-label required-field">Comenzando</label>
+        <input type="date" class="form-control" id="fechaInicio" [(ngModel)]="expediente.fechaInicio" name="fechaInicio"
+          required [class.is-invalid]="expedienteForm.submitted && !expediente.fechaInicio">
+        <div class="invalid-feedback" *ngIf="expedienteForm.submitted && !expediente.fechaInicio">
+          Por favor ingrese una fecha válida
+        </div>
+      </div>
+    </div>
+
+    <!-- Registros -->
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <label for="regEntrada" class="form-label">Reg Entrada</label>
+        <input type="text" class="form-control" id="regEntrada" [(ngModel)]="expediente.regEntrada" name="regEntrada"
+          [class.is-invalid]="expedienteForm.submitted && !validateRegistro(expediente.regEntrada)">
+        <div class="invalid-feedback" *ngIf="expedienteForm.submitted && !validateRegistro(expediente.regEntrada)">
+          Solo se permiten letras, números y guiones
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="regOCCI" class="form-label">Reg OCCI</label>
+        <input type="text" class="form-control" id="regOCCI" [(ngModel)]="expediente.regOCCI" name="regOCCI"
+          [class.is-invalid]="expedienteForm.submitted && !validateRegistro(expediente.regOCCI)">
+        <div class="invalid-feedback" *ngIf="expedienteForm.submitted && !validateRegistro(expediente.regOCCI)">
+          Solo se permiten letras, números y guiones
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="regEFTO" class="form-label">Reg EFTO</label>
+        <input type="text" class="form-control" id="regEFTO" [(ngModel)]="expediente.regEFTO" name="regEFTO"
+          [class.is-invalid]="expedienteForm.submitted && !validateRegistro(expediente.regEFTO)">
+        <div class="invalid-feedback" *ngIf="expedienteForm.submitted && !validateRegistro(expediente.regEFTO)">
+          Solo se permiten letras, números y guiones
+        </div>
+      </div>
+    </div>
+
+    <!-- Clasificación, Estado y Órgano -->
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <label for="clasificacion" class="form-label required-field">Clasificación</label>
+        <select class="form-select" id="clasificacion" [(ngModel)]="expediente.clasificacion" name="clasificacion"
+          required [class.is-invalid]="expedienteForm.submitted && !expediente.clasificacion">
+          <option value="" disabled selected>Seleccione</option>
+          <option *ngFor="let clasificacion of clasificaciones" [value]="clasificacion">{{clasificacion}}</option>
+        </select>
+        <div class="invalid-feedback" *ngIf="expedienteForm.submitted && !expediente.clasificacion">
+          Por favor seleccione una clasificación
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="estado" class="form-label required-field">Estado</label>
+        <select class="form-select" id="estado" [(ngModel)]="expediente.estado" name="estado" required
+          [class.is-invalid]="expedienteForm.submitted && !expediente.estado">
+          <option value="" disabled selected>Seleccione</option>
+          <option *ngFor="let estado of estados" [value]="estado">{{estado}}</option>
+        </select>
+        <div class="invalid-feedback" *ngIf="expedienteForm.submitted && !expediente.estado">
+          Por favor seleccione un estado
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="organo" class="form-label required-field">Órgano</label>
+        <select class="form-select" id="organo" [(ngModel)]="expediente.organo" name="organo" required
+          [class.is-invalid]="expedienteForm.submitted && !expediente.organo">
+          <option value="" disabled selected>Seleccione</option>
+          <option *ngFor="let organo of organos" [value]="organo">{{organo}}</option>
+        </select>
+        <div class="invalid-feedback" *ngIf="expedienteForm.submitted && !expediente.organo">
+          Por favor seleccione un órgano
+        </div>
+      </div>
+    </div>
+
+    <!-- Nombre Caso, Trabajo y Entidad -->
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <label for="nombreCaso" class="form-label required-field">Nombre Caso</label>
+        <input type="text" class="form-control" id="nombreCaso" [(ngModel)]="expediente.nombreCaso" name="nombreCaso"
+          required minlength="5" maxlength="100"
+          [class.is-invalid]="(expedienteForm.submitted && !expediente.nombreCaso) || !validateNombreCaso()">
+        <div class="invalid-feedback" *ngIf="expedienteForm.submitted && !expediente.nombreCaso">
+          Por favor ingrese el nombre del caso
+        </div>
+        <div class="invalid-feedback" *ngIf="expediente.nombreCaso && !validateNombreCaso()">
+          El nombre debe tener entre 5 y 100 caracteres
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="trabajo" class="form-label required-field">Trabajo</label>
+        <select class="form-select" id="trabajo" [(ngModel)]="expediente.trabajo" name="trabajo" required
+          [class.is-invalid]="expedienteForm.submitted && !expediente.trabajo">
+          <option value="" disabled selected>Seleccione</option>
+          <option *ngFor="let trabajo of trabajos" [value]="trabajo">{{trabajo}}</option>
+        </select>
+        <div class="invalid-feedback" *ngIf="expedienteForm.submitted && !expediente.trabajo">
+          Por favor seleccione un trabajo
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="entidad" class="form-label required-field">Entidad</label>
+        <select class="form-select" id="entidad" [(ngModel)]="expediente.entidad" name="entidad" required
+          [class.is-invalid]="expedienteForm.submitted && !expediente.entidad">
+          <option value="" disabled selected>Seleccione</option>
+          <option *ngFor="let entidad of entidades" [value]="entidad">{{entidad}}</option>
+        </select>
+        <div class="invalid-feedback" *ngIf="expedienteForm.submitted && !expediente.entidad">
+          Por favor seleccione una entidad
+        </div>
+      </div>
+    </div>
+    <!-- Nota sobre campos obligatorios -->
+    <div class="mt-3 text-muted small">
+      <span class="text-danger">*</span> Campos obligatorios
+    </div>
+    <!-- Botones -->
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <button type="submit" class="btn btn-success fs-5">ACEPTAR</button>
+      <a href="/" class="btn btn-danger fs-5">CANCELAR</a>
+    </div>
+  </form>
+</div>

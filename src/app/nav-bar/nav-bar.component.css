@@ -1,0 +1,35 @@
+/* Navbar general */
+.navbar {
+  min-height: 80px;
+  transition: all 0.3s ease;
+}
+
+/* Items del menú */
+.nav-link {
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Menú activo (usando routerLinkActive) */
+.nav-link.active {
+  background-color: var(--bs-primary);
+  color: white !important;
+}
+
+/* Menú desplegable en móviles */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background-color: white;
+    padding: 20px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+  }
+
+  .nav-item {
+    margin-bottom: 5px;
+  }
+}
