@@ -1,39 +1,28 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
   <div class="container">
-    <a class="navbar-brand fw-bold fs-4 d-flex align-items-center" href="/">
+    <a class="navbar-brand fw-bold fs-4 d-flex align-items-center" style="cursor: pointer;" (click)="goToRouter('/')">
       <span class="ms-2">REGISTRO DE EXPEDIENTE</span>
     </a>
-    <button class="navbar-toggler"
-            type="button"
-            (click)="isMenuCollapsed = !isMenuCollapsed"
-            [attr.aria-expanded]="!isMenuCollapsed"
-            aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed"
+      [attr.aria-expanded]="!isMenuCollapsed" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse"
-         [class.show]="!isMenuCollapsed"
-         id="mainNavbar">
+    <div class="collapse navbar-collapse" [class.show]="!isMenuCollapsed" id="mainNavbar">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item mx-lg-2">
-          <a class="nav-link px-3 py-2 rounded"
-             href="/registrar"
-             >
+          <button class="nav-link px-3 py-2 rounded" (click)="goToRouter('/registrar')">
             <i class="bi bi-person-lines-fill me-2"></i>Generales
-          </a>
+          </button>
         </li>
         <li class="nav-item mx-lg-2">
-          <a class="nav-link px-3 py-2 rounded"
-             href="/info"
-            >
+          <button class="nav-link px-3 py-2 rounded" (click)="goToRouter('/info')">
             <i class="bi bi-folder-fill me-2"></i>Expediente
-          </a>
+          </button>
         </li>
         <li class="nav-item mx-lg-2">
-          <a class="nav-link px-3 py-2 rounded"
-             href="/info"
-             >
+          <button class="nav-link px-3 py-2 rounded" (click)="goToRouter('/info')">
             <i class="bi bi-people-fill me-2"></i>Relacionados
-          </a>
+          </button>
         </li>
       </ul>
     </div>
