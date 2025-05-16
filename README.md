@@ -29,46 +29,36 @@ Aplicación web desarrollada con **Angular** y **TypeScript** para el registro y
 - Interfaz intuitiva y accesible.  
 
 ✅ **Capturas del sistema:**  
-| ![Prototipo Figma](media/image5.png) | ![Formulario implementado](media/image9.png) |  
+| ![Prototipo Figma](public/prototipo-figma.png) | ![Formulario implementado](public/formulario-implementado.png) |  
 |--------------------------------------|---------------------------------------------|  
 
 ---
 
 ## 📥 Instalación y Ejecución  
 1. **Clonar el repositorio:**  
-   ```bash
-   git clone [URL_DEL_REPOSITORIO]
-   cd registro-expedientes
-Instalar dependencias:
 
-bash
-npm install
-Ejecutar en modo desarrollo:
+```bash
+git clone https://github.com/1MarioRG3/Registro_Expediente
+cd registro-expedientes
+```
+2. **Instalar dependencias:** 
 
-bash
+  ```bash
+  npm install
+  ```
+
+
+3. **Ejecutar en modo desarrollo:** 
+ ```bash
 ng serve
-Abrir en el navegador: http://localhost:4200.
+  ```
+## 🔗 Enlaces Relevantes
 
-📂 Estructura del Código
-src/  
-├── app/  
-│   ├── components/          # Componentes Angular (formulario, listado, etc.)  
-│   ├── services/            # Lógica de negocio (ej: validaciones)  
-│   ├── models/              # Interfaces TypeScript  
-│   └── app-routing.module.ts # Configuración de rutas  
-├── assets/                  # Imágenes y estilos  
-└── index.html               # Punto de entrada  
-🔗 Enlaces Relevantes
-🔗 Repositorio GitHub: [URL_DEL_REPOSITORIO]
+🔗 Repositorio GitHub: [CLICK AQUI](https://github.com/1MarioRG3/Registro_Expediente)
 
-🎨 Prototipo Figma: [URL_DEL_PROTOTIPO] (si está disponible)
+🎨 Prototipo Figma: [CLICK AQUI](https://www.figma.com/design/4rKQqwE0IuWJnRgndtSAIj/Prototipo-Interfaz-Registro_Expediente?node-id=0-1&t=C95NvlUe85iOIma7-1)
 
-🚀 Aplicación desplegada: [URL_DEL_DEPLOY] (ej: Netlify, Vercel)
+🚀 Aplicación desplegada: [CLICK AQUI](https://1mariorg3.github.io/Registro_Expediente)
 
-📚 Bibliografía y Referencias
-Documentación oficial de Angular y TypeScript.
-
-Libros: "Pro Angular" (Freeman, 2022), "Angular Testing with Jasmine" (Gackenheimer, 2021).
-
-📄 Licencia
+## 📄 Licencia
 Este proyecto está bajo la licencia MIT. Consulte el archivo LICENSE para más detalles.
