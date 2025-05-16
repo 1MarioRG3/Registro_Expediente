@@ -1,27 +1,74 @@
-# Miangularproyect
+# 📂 Registro de Expedientes - PID IV  
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.3.
+**Autor:** Mario Rivero García  
+**Grupo:** 3304  
+**Facultad:** FIO  
+**Universidad:** Universidad de Ciencias Informáticas, La Habana, Cuba (2025)  
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🚀 Descripción del Proyecto  
+Aplicación web desarrollada con **Angular** y **TypeScript** para el registro y gestión de expedientes. El proyecto incluye:  
+- 📋 Formularios reactivos con validaciones.  
+- 🔄 Enrutamiento dinámico entre componentes.  
+- 🎨 Diseño responsive (escritorio y móvil) prototipado en **Figma**.  
+- 📊 Gestión de estados y modularización con Angular.  
 
-## Code scaffolding
+---
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 🌟 Características  
+✅ **Tecnologías utilizadas:**  
+- Frontend: Angular 15+, TypeScript, Bootstrap 5.  
+- Diseño: Figma (prototipos high-fidelity).  
+- Control de versiones: GitHub.  
 
-## Build
+✅ **Funcionalidades principales:**  
+- Registro de expedientes con campos obligatorios/opcionales.  
+- Validación de datos (formato fecha, caracteres permitidos, etc.).  
+- Navegación entre vistas mediante rutas.  
+- Interfaz intuitiva y accesible.  
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+✅ **Capturas del sistema:**  
+| ![Prototipo Figma](media/image5.png) | ![Formulario implementado](media/image9.png) |  
+|--------------------------------------|---------------------------------------------|  
 
-## Running unit tests
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 📥 Instalación y Ejecución  
+1. **Clonar el repositorio:**  
+   ```bash
+   git clone [URL_DEL_REPOSITORIO]
+   cd registro-expedientes
+Instalar dependencias:
 
-## Running end-to-end tests
+bash
+npm install
+Ejecutar en modo desarrollo:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+bash
+ng serve
+Abrir en el navegador: http://localhost:4200.
 
-## Further help
+📂 Estructura del Código
+src/  
+├── app/  
+│   ├── components/          # Componentes Angular (formulario, listado, etc.)  
+│   ├── services/            # Lógica de negocio (ej: validaciones)  
+│   ├── models/              # Interfaces TypeScript  
+│   └── app-routing.module.ts # Configuración de rutas  
+├── assets/                  # Imágenes y estilos  
+└── index.html               # Punto de entrada  
+🔗 Enlaces Relevantes
+🔗 Repositorio GitHub: [URL_DEL_REPOSITORIO]
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+🎨 Prototipo Figma: [URL_DEL_PROTOTIPO] (si está disponible)
+
+🚀 Aplicación desplegada: [URL_DEL_DEPLOY] (ej: Netlify, Vercel)
+
+📚 Bibliografía y Referencias
+Documentación oficial de Angular y TypeScript.
+
+Libros: "Pro Angular" (Freeman, 2022), "Angular Testing with Jasmine" (Gackenheimer, 2021).
+
+📄 Licencia
+Este proyecto está bajo la licencia MIT. Consulte el archivo LICENSE para más detalles.
